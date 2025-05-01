@@ -1,0 +1,204 @@
+:root {
+    --purple: #815A8F;
+    --blue: #161616;
+    --green: #9ED763;
+    --yellow: #FBD400;
+    --red: #ff0000;
+    --gray: #bebaba;
+    --toggle-width: 75px;
+    --toggle-height: 75px;
+    --item-width: 300px;
+    --item-height: 40px;
+    --item-gap: 40px;
+}
+
+/* center container */
+.palette-nav {
+    /* position: fixed; */
+    /* top: 150px;                */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    /* width: var(--toggle-width);
+    height: var(--toggle-height); */
+    width: 150px;
+    height:75px;
+
+    /* z-index: 200; */
+    /* position:  relative; */
+    /* transition: all 0.3s ease; */
+
+
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+
+}
+
+.palette-nav.scrolled {
+    transform: initial;
+    left: initial;
+    bottom: initial;
+    top: initial;
+
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--toggle-width);
+        height: var(--toggle-height);
+    }
+
+    /* 40% {
+        top: 75%;
+        left: 25%;
+        transform: translate(-25%, -25%);
+    }
+
+    70% {
+        top: 85%;
+        left: 15%;
+        transform: translate(-10%, -10%);
+    } */
+
+    100% {
+        top: calc(95% - 50px);
+        left: 5%;
+        transform: translate(-5%, -5%);
+        width: var(--toggle-width);
+        height: var(--toggle-height);
+        opacity: 0.7;
+    }
+}
+
+/* rectangle toggle */
+.swatch-toggle {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    background: var(--white);
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.2);
+
+   
+}
+
+/* children hidden by default */
+.swatch-item {
+    display: flex;
+    width: var(--item-width);
+    height: var(--item-height);
+    border-radius: 30px;
+    position: absolute;
+    opacity: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    top: 10%;
+    left: 50%;
+    transform: rotate(100deg) scale(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fan-out effect from bottom center */
+.palette-nav.open .item-0 {
+    transform: rotate(-60deg) scale(1);
+    transition-delay: 0.5s;
+}
+
+.palette-nav.open .item-1 {
+    transform: rotate(-40deg) scale(1);
+    transition-delay: 0.5s;
+}
+
+.palette-nav.open .item-2 {
+    transform: rotate(-20deg) scale(1);
+    transition-delay: 0.5s;
+}
+
+.palette-nav.open .item-3 {
+    transform: rotate(0deg) scale(1);
+    transition-delay: 0.5s;
+}
+
+/* label fade-in on hover */
+.swatch-item .label {
+    opacity: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    font-family: cursive;
+
+}
+
+.swatch-item:hover .label {
+    opacity: 1;
+    font-weight: 1;
+    color: var(--red);
+
+}
+
+
+.swatch-item:hover {
+    transition: transform .6s !important;
+}
+
+
+.swatch-toggle:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    transition-delay: 0s;
+    opacity: 85% !important;
+    background-color: var(--white) !important;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+
+}
+
+.item-0:hover{
+    transform: rotate(-60deg) scale(1.2) !important;
+    transition-delay: 0s;
+    opacity: 90% !important;
+    background-color: var(--white) !important;
+}
+.item-1:hover{
+    transform: rotate(-40deg) scale(1.2) !important;
+    transition-delay: 0s;
+    background-color: var(--white) !important;
+    opacity: 90% !important;
+
+}
+.item-2:hover{
+    transform: rotate(-20deg) scale(1.2) !important;
+    transition-delay: 0s;
+    background-color: var(--white) !important;
+    opacity: 90% !important;
+
+}
+.item-3:hover{
+    transform: rotate(0deg) scale(1.2) !important;
+    transition-delay: 0s;
+    background-color: var(--white) !important;
+    opacity: 90% !important;
+
+}

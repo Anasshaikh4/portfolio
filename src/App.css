@@ -1,0 +1,96 @@
+/* ===================================
+   1) COLOR PALETTE (CSS variables)
+   =================================== */
+   :root {
+    --red:            #F73F52;
+    --orange:         #FF9000;
+    --yellow:         #FBD400;
+    --green:          #9ED763;
+    --blue:           #161618;
+    --purple:         #815A8F;
+    --white:          #FFFFFF;
+    --gray:  #6e6b70;
+    --black: #000000;
+  }
+  
+  /* ===================================
+     2) GLOBAL RESET + SMOOTH SCROLL
+     =================================== */
+  html {
+    scroll-behavior: smooth;
+  }
+  body, .App {
+    margin: 0;
+    font-family: sans-serif;
+    background: var(--gray);
+    color: var(--white);
+  }
+  
+  /* ===================================
+     3) NAVBAR
+     =================================== */
+  .navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 100;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0; padding: 1rem 0;
+  }
+  .navbar button {
+    background: none;
+    border: 2px solid var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* transition: background 0.3s, color 0.3s; */
+  }
+  .navbar button:hover {
+    background: var(--white);
+    color: var(--purple);
+  }
+ 
+  /* ensure sections start below the palette */
+  main {
+    margin-top: calc(var(--toggle-height) + 40px); /* 70px toggle + 40px buffer */
+  }
+  
+  /* ===================================
+     4) SECTIONS
+     =================================== */
+  .section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    forced-color-adjust: var(--black)
+  }
+  .section:nth-child(odd) {
+    background: rgba(0,0,0,0.1);
+  }
+  
+  .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
+  .section p {
+    max-width: 600px;
+    text-align: center;
+    color: var(--blue);
+  }
