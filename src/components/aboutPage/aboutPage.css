@@ -54,14 +54,20 @@
     font: 1em cursive;
     font-weight: bold;
     /* position: relative; */
-
+    /* top: 100px;
+    left: 50%; */
     
 }
 
 
 .aboutPage__paragraphDiv{
-    background-color: ;
+
+    width: 50%;
+    font-weight: bold;
+    font-family: cursive;
+
 }
+
 .aboutPage__description{
     font-size: 20px;
 }
@@ -79,6 +85,7 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     padding: 20px;
     color: #fff;
+    gap: 20%;
 }
 
 .rightSide{

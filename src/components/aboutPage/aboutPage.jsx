@@ -25,7 +25,7 @@ export default function AboutPage(){
             <div className="leftSide">
                 <div className="aboutPage__container">
                     <img src="src\assets\self_portrait.jpg" alt="Self Portrait" className="aboutPage__image" />
-                    </div>
+                </div>
                 <div className="aboutPage__content">
                     {/* <h1 className="aboutPage__title">About Me</h1> */}
                     <div className="aboutPage__paragraphDiv">                        
